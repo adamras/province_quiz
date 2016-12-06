@@ -1,4 +1,4 @@
-#I don't know how this works.
+
 
 province_capitals_dict = {
 "Alberta":"Edmonton",
@@ -18,13 +18,25 @@ province_capitals_dict = {
 
 import random
 
+while True:
+    user_input = raw_input ("Do you want to play a game? Yes or No: ")
+    if user_input == "No":
+        print "Fine.  I don't even care."
+        quit()
+    else:
+        print("That's cool and you're cool.  YAY KNOWLEDGE!")
+        break
+
 provinces = list(province_capitals_dict.keys())
-for i in [1,2,3,4,5]:
+print("Type 'quit' to stop playing")
+while True:
     province = random.choice(provinces)
     capital = province_capitals_dict[province]
     capital_guess = raw_input("What is the capital of " + province + "? ")
-	
-    if capital_guess == capital:
+
+    if capital_guess == "quit":
+        break
+    elif capital_guess == capital:
         print ("Correct.  You are a knowledge wizard.")
     else:
         print ("That ain't right, pleb.  The capital of " + province + " is " + capital + ".")
